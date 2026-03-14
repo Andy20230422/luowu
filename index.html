@@ -34,23 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* ─── CURSOR ─── */
-    body { cursor: auto; }
-    #cursor {
-      position: fixed; width: 12px; height: 12px;
-      background: var(--gold); border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transition: transform 0.15s ease, opacity 0.2s;
-      transform: translate(-50%, -50%);
-    }
-    #cursor-ring {
-      position: fixed; width: 36px; height: 36px;
-      border: 1px solid rgba(201,168,76,0.5); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transition: transform 0.35s ease, opacity 0.2s;
-      transform: translate(-50%, -50%);
-    }
-
     /* ─── NOISE OVERLAY ─── */
     body::before {
       content: '';
@@ -87,14 +70,13 @@
     .logo-text .cn { font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 700; color: var(--white); letter-spacing: 2px; }
     .logo-text .en { font-size: 10px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
     nav ul { 
-  display: flex;
-  gap: 40px;
-  list-style: none;
-
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     nav ul a { color: var(--gray-light); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s; }
     nav ul a:hover { color: var(--gold); }
     .nav-cta {
@@ -110,7 +92,7 @@
       min-height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; position: relative; overflow: hidden;
-      padding: 0 40px;
+      padding: 0 20px;
     }
     .hero-bg {
       position: absolute; inset: 0;
@@ -133,7 +115,7 @@
     }
     .hero-title {
       font-family: 'Noto Serif TC', serif;
-      font-size: clamp(42px, 8vw, 88px);
+      font-size: clamp(38px, 8vw, 88px);
       font-weight: 700; line-height: 1.12;
       letter-spacing: 4px;
       opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
@@ -176,10 +158,15 @@
       cursor: pointer; font-family: inherit; transition: all 0.3s;
     }
     .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+
+    /* ─── SCROLL ICON 修正 ─── */
     .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 40px; 
+      left: 0; right: 0; margin: 0 auto;
+      width: 100px;
       display: flex; flex-direction: column; align-items: center; gap: 8px;
       opacity: 0; animation: fadeUp 0.8s 1.6s forwards;
+      z-index: 5;
     }
     .hero-scroll span { font-size: 10px; letter-spacing: 3px; color: var(--gray); text-transform: uppercase; }
     .scroll-line {
@@ -215,7 +202,7 @@
     }
     .why-stat {
       font-family: 'Playfair Display', serif;
-      font-size: 72px; font-weight: 900;
+      font-size: clamp(48px, 8vw, 72px); font-weight: 900;
       color: var(--gold); line-height: 1;
       text-shadow: 0 0 40px rgba(201,168,76,0.2);
     }
@@ -264,68 +251,6 @@
     .step-tag { font-size: 10px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
     .step-title { font-size: 22px; font-weight: 500; letter-spacing: 1px; margin-bottom: 14px; }
     .step-desc { font-size: 14px; line-height: 1.9; color: var(--gray); max-width: 640px; }
-
-    /* ─── PRICING ─── */
-    #cta { background: var(--blue); overflow: hidden; }
-    #cta .section-inner { position: relative; }
-    .pricing-bg {
-      position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px; margin-top: 20px;
-    }
-    .pricing-card {
-      border: 1px solid rgba(201,168,76,0.15);
-      padding: 36px 28px;
-      position: relative; overflow: hidden;
-      transition: all 0.4s;
-      background: rgba(10,10,10,0.4);
-    }
-    .pricing-card:hover {
-      border-color: rgba(201,168,76,0.5);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.08);
-    }
-    .pricing-card.featured {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.04);
-    }
-    .pricing-card.featured::before {
-      content: '推薦方案';
-      position: absolute; top: 16px; right: 16px;
-      font-size: 10px; letter-spacing: 2px;
-      background: var(--gold); color: var(--black);
-      padding: 4px 12px;
-    }
-    .pricing-budget {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px; font-weight: 900;
-      color: var(--gold); line-height: 1;
-    }
-    .pricing-budget span { font-size: 16px; font-weight: 400; color: var(--gray); }
-    .pricing-meta { display: flex; gap: 20px; margin: 16px 0 24px; }
-    .pricing-meta-item { }
-    .pricing-meta-item .val { font-size: 20px; font-weight: 500; color: var(--white); }
-    .pricing-meta-item .key { font-size: 10px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; }
-    .pricing-divider { height: 1px; background: rgba(201,168,76,0.15); margin-bottom: 24px; }
-    .pricing-benefit {
-      font-size: 14px; color: var(--white); font-weight: 500; margin-bottom: 8px;
-    }
-    .pricing-note { font-size: 12px; color: var(--gray); line-height: 1.7; }
-    .pricing-tip {
-      margin-top: 60px; padding: 32px 40px;
-      border: 1px solid rgba(201,168,76,0.2);
-      background: rgba(201,168,76,0.03);
-      display: flex; gap: 20px; align-items: flex-start;
-    }
-    .tip-icon { font-size: 24px; flex-shrink: 0; }
-    .tip-text { font-size: 14px; line-height: 1.9; color: var(--gray-light); }
-    .tip-text strong { color: var(--gold); font-weight: 500; }
 
     /* ─── CASES ─── */
     #cases { background: var(--black-soft); }
@@ -387,32 +312,23 @@
       flex-wrap: wrap; position: relative;
     }
     .contact-card{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(201,168,76,0.2);
-
-  padding:50px 40px;
-  min-width:260px;
-  min-height:200px;
-
-  text-align:center;
-
-  transition:all .35s;
-}
-.contact-card:hover{
-  border-color:var(--gold);
-  background:rgba(201,168,76,0.05);
-  transform:translateY(-8px);
-}
-.contact-card:hover .contact-tip{
-  opacity:1;
-}
-    .contact-card .label { font-size: 10px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
-    .contact-card .value { font-size: 15px; color: var(--white); }
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(201,168,76,0.2);
+      padding:50px 40px;
+      min-width:260px;
+      min-height:220px;
+      text-align:center;
+      transition:all .35s;
+    }
+    .contact-card:hover{
+      border-color:var(--gold);
+      background:rgba(201,168,76,0.05);
+      transform:translateY(-8px);
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -438,119 +354,51 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── RESPONSIVE ─── */
+	@keyframes gridMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(-80px); }
+    }
+
+    /* ─── RESPONSIVE OPTIMIZATION ─── */
     @media (max-width: 900px) {
-      nav { padding: 20px 24px; }
+      nav { padding: 16px 20px; }
       nav ul { display: none; }
-      .section-inner { padding: 80px 24px; }
+      .section-inner { padding: 80px 20px; }
+      
+      /* 手機版數字顯色優化 */
+      .step-num { 
+        color: var(--gold-light); 
+        font-size: 48px;
+        opacity: 0.6;
+      }
+      .process-step:hover .step-num { opacity: 1; }
+      .process-step { grid-template-columns: 60px 1fr; gap: 20px; }
+
       .why-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 12px; text-align: center; }
-      .hero-ctas { flex-direction: column; align-items: center; }
+      
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 40px 20px; }
+      .hero-ctas { flex-direction: column; width: 100%; max-width: 300px; }
+      .btn-primary, .btn-outline { width: 100%; padding: 16px 20px; }
+
+      .contact-cards { width: 100%; }
+      .contact-card { width: 100%; min-width: 0; }
     }
-	
-	@keyframes gridMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(-80px); }
-}
-.contact-label{
-  font-size:11px;
-  letter-spacing:3px;
-  color:var(--gold);
-  margin-bottom:18px;
-  text-transform:uppercase;
-}
 
-.contact-main{
-  font-size:22px;
-  font-weight:500;
-  color:var(--white);
-}
+    .contact-label{ font-size:11px; letter-spacing:3px; color:var(--gold); margin-bottom:18px; text-transform:uppercase; }
+    .contact-main{ font-size:20px; font-weight:500; color:var(--white); }
+    .contact-sub{ margin-top:10px; font-size:13px; color:var(--gray); }
+    .contact-link{ text-decoration:none; color:inherit; }
+    .contact-tip{ margin-top:14px; font-size:12px; color:var(--gray); opacity:0.6; }
+    @media (min-width: 901px) { .contact-tip { opacity: 0; } .contact-card:hover .contact-tip { opacity: 1; } }
 
-.contact-main a{
-  color:var(--gold);
-  text-decoration:none;
-}
-
-.contact-main a:hover{
-  opacity:.8;
-}
-
-.contact-sub{
-  margin-top:10px;
-  font-size:13px;
-  color:var(--gray);
-}
-
-body, div, p, span, section, h1, h2, h3, h4, h5, h6 {
-  cursor: default;
-}
-
-a, button {
-  cursor: pointer;
-}
-
-.contact-link{
-  text-decoration:none;
-  color:inherit;
-}
-.contact-link:hover{
-  transform:translateY(-6px);
-  border-color:var(--gold);
-}
-
-.contact-link{
-  text-decoration:none;
-  color:inherit;
-}
-
-.contact-card{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  min-height:220px;
-  min-width:260px;
-
-  text-align:center;
-}
-
-.contact-label{
-  font-size:11px;
-  letter-spacing:3px;
-  color:var(--gold);
-  margin-bottom:18px;
-}
-
-.contact-main{
-  font-size:22px;
-  font-weight:500;
-  color:var(--white);
-}
-
-.contact-sub{
-  margin-top:10px;
-  font-size:13px;
-  color:var(--gray);
-}
-
-.contact-tip{
-  margin-top:14px;
-  font-size:12px;
-  color:var(--gray);
-  opacity:0;
-  transition:all .3s;
-}
+    body, div, p, span, section, h1, h2, h3, h4, h5, h6 { cursor: default; }
+    a, button { cursor: pointer; }
   </style>
 </head>
 <body>
 
-
-
-  <!-- NAV -->
   <nav>
     <div class="logo-wrap">
       <div class="logo-icon"><img src="logo.jpg" alt="洛浯國際" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" onerror="this.parentElement.innerHTML='洛'" /></div>
@@ -568,7 +416,6 @@ a, button {
     <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">立即合作</button>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
@@ -578,7 +425,7 @@ a, button {
     <div class="hero-divider"></div>
     <p class="hero-desc">超過 70% 的年輕消費者會因網紅推薦選擇餐廳。明明好吃卻沒人知道？我們幫你解決這個問題，從找網紅到追成效，全部包辦。</p>
     <div class="hero-ctas">
-      <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">查看合作方案</button>
+      <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">查看合作方案</button>
       <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">了解合作流程</button>
     </div>
     <div class="hero-scroll">
@@ -587,7 +434,6 @@ a, button {
     </div>
   </section>
 
-  <!-- WHY US -->
   <section id="why">
     <div class="section-inner">
       <div class="why-grid">
@@ -595,7 +441,7 @@ a, button {
           <span class="section-tag">Why Us</span>
           <h2 class="section-title">好吃不怕沒<br/><span style="color:var(--gold)">人知道</span></h2>
           <div class="section-line"></div>
-          <div style="display:flex;gap:48px;margin-bottom:40px">
+          <div style="display:flex;gap:48px;margin-bottom:40px;flex-wrap:wrap;">
             <div>
               <div class="why-stat">70<span style="font-size:36px">%</span></div>
               <div class="why-stat-label">年輕消費者依社群決定去哪吃</div>
@@ -643,7 +489,6 @@ a, button {
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section id="process">
     <div class="section-inner">
       <span class="section-tag">How It Works</span>
@@ -655,7 +500,7 @@ a, button {
           <div class="step-body">
             <div class="step-tag">Step One</div>
             <div class="step-title">選擇合作方案</div>
-            <div class="step-desc">依據你的預算、目標（曝光 / 來客 / 品牌形象）與餐廳定位，挑選最適方案。我們會免費評估你的餐廳，提供客製化建議，讓你選到最划算的組合。</div>
+            <div class="step-desc">依據你的預算、目標（曝光 / 來客 / 品牌形象）與餐廳定位，挑選最適方案。我們會免費評估你的餐廳，提供客製化建議。</div>
           </div>
         </div>
         <div class="process-step reveal">
@@ -663,7 +508,7 @@ a, button {
           <div class="step-body">
             <div class="step-tag">Step Two</div>
             <div class="step-title">精準媒合創作者</div>
-            <div class="step-desc">依餐廳風格、餐點特色及目標客群，從我們的網紅資料庫精準媒合。優先考量調性契合度、互動率、真實粉絲比例，提供名單讓你確認後執行。</div>
+            <div class="step-desc">依餐廳風格、餐點特色及目標客群，從我們的網紅資料庫精準媒合。優先考量調性契合度、互動率。</div>
           </div>
         </div>
         <div class="process-step reveal">
@@ -671,7 +516,7 @@ a, button {
           <div class="step-body">
             <div class="step-tag">Step Three</div>
             <div class="step-title">到店拍攝體驗</div>
-            <div class="step-desc">網紅親自到店免費體驗，拍攝餐點細節、環境氛圍、用餐過程、真實反應。事先溝通重點呈現（招牌菜、隱藏菜單、店內設計），確保內容自然不硬業配。</div>
+            <div class="step-desc">網紅親自到店拍攝餐點細節、環境氛圍、用餐過程。確保內容自然，非硬性推銷。</div>
           </div>
         </div>
         <div class="process-step reveal">
@@ -679,23 +524,21 @@ a, button {
           <div class="step-body">
             <div class="step-tag">Step Four</div>
             <div class="step-title">後製與跨平台發布</div>
-            <div class="step-desc">網紅專業製作 Reels 15–60 秒、YouTube 長短影片、限時動態、圖文貼文，依方案跨平台發布 IG、TikTok、YouTube Shorts、FB 等。發布前提供預覽審核。</div>
+            <div class="step-desc">製作 Reels、Shorts 或圖文，跨平台發布。發布前提供預覽審核。</div>
           </div>
         </div>
         <div class="process-step reveal" style="border-bottom:none">
           <div class="step-num">05</div>
           <div class="step-body">
             <div class="step-tag">Step Five</div>
-            <div class="step-title">成效回報 & 優化建議</div>
-            <div class="step-desc">發布後 30 天內提供完整數據報表：各平台總觸及數、觀看數、互動率。並提供下一波優化建議，調整網紅類型或內容方向，持續放大成效。</div>
+            <div class="step-title">成效回報 & 優化</div>
+            <div class="step-desc">發布後提供完整數據報表，包含觸及、觀看與互動率，並提供下一波優化建議。</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <!-- CASES -->
   <section id="cases">
     <div class="section-inner">
       <span class="section-tag">Success Stories</span>
@@ -706,7 +549,6 @@ a, button {
           <div class="case-label">Case A</div>
           <div class="case-icon">🍰</div>
           <div class="case-title">甜點店<br/>短影片 3 天爆量</div>
-          <p style="font-size:13px;color:var(--gray);line-height:1.8">透過 TikTok + IG Reels 雙平台策略，精準鎖定甜點愛好者，成功引爆話題討論。</p>
           <div class="case-stats">
             <div class="case-stat"><div class="val">1.5萬</div><div class="key">3天觀看次數</div></div>
             <div class="case-stat"><div class="val">+20%</div><div class="key">來客數提升</div></div>
@@ -716,27 +558,24 @@ a, button {
           <div class="case-label">Case B</div>
           <div class="case-icon">☕</div>
           <div class="case-title">咖啡廳<br/>探店影片帶動追蹤</div>
-          <p style="font-size:13px;color:var(--gray);line-height:1.8">YouTube 深度探店長片搭配 IG 多張圖文，呈現氛圍美感，引發大量打卡分享。</p>
           <div class="case-stats">
             <div class="case-stat"><div class="val">+1,200</div><div class="key">IG 新增追蹤</div></div>
-            <div class="case-stat"><div class="val">1週</div><div class="key">影片上線達成</div></div>
+            <div class="case-stat"><div class="val">1週</div><div class="key">上線達成</div></div>
           </div>
         </div>
         <div class="case-card reveal">
           <div class="case-label">Case C</div>
           <div class="case-icon">🍽️</div>
           <div class="case-title">餐廳合作套餐<br/>業績大幅提升</div>
-          <p style="font-size:13px;color:var(--gray);line-height:1.8">推出網紅限定合作套餐，透過粉絲追隨效應直接帶動點單，形成話題效益。</p>
           <div class="case-stats">
             <div class="case-stat"><div class="val">+30%</div><div class="key">套餐銷售量</div></div>
-            <div class="case-stat"><div class="val">口碑</div><div class="key">持續發酵中</div></div>
+            <div class="case-stat"><div class="val">口碑</div><div class="key">持續發酵</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
   <section id="benefits">
     <div class="section-inner">
       <span class="section-tag">Our Advantages</span>
@@ -746,73 +585,55 @@ a, button {
         <div class="benefit-item reveal">
           <div class="benefit-icon">🚀</div>
           <div class="benefit-title">快速增加餐廳曝光</div>
-          <div class="benefit-desc">台灣網紅行銷年成長 11.7%，短影音主導、精準媒合帶來高互動，美食類轉換力特別強，讓你的餐廳快速進入目標客群的視野。</div>
+          <div class="benefit-desc">短影音主導、精準媒合帶來高互動，讓你的餐廳快速進入目標客群視野。</div>
         </div>
         <div class="benefit-item reveal">
           <div class="benefit-icon">👥</div>
-          <div class="benefit-title">吸引網紅粉絲到店消費</div>
-          <div class="benefit-desc">真實體驗分享比硬廣更有說服力，粉絲信任度高、轉換率優於品牌自製內容。過去案例顯示，合作後來客數可提升 20–50%。</div>
+          <div class="benefit-title">吸引網紅粉絲消費</div>
+          <div class="benefit-desc">真實體驗分享比硬廣更有說服力，合作後來客數可提升 20–50%。</div>
         </div>
         <div class="benefit-item reveal">
           <div class="benefit-icon">✨</div>
-          <div class="benefit-title">建立品牌形象與社群聲量</div>
-          <div class="benefit-desc">透過故事化內容（氛圍、招牌菜、用餐體驗），強化你的餐廳定位。長期累積 Google 評論增加、打卡標記暴增，讓品牌成為「值得特地來」的記憶點。</div>
+          <div class="benefit-title">建立品牌社群聲量</div>
+          <div class="benefit-desc">透過故事化內容強化定位，讓餐廳成為「值得特地前來」的記憶點。</div>
         </div>
         <div class="benefit-item reveal">
           <div class="benefit-icon">🎬</div>
           <div class="benefit-title">無需自行拍攝管理</div>
-          <div class="benefit-desc">自己拍影片常卡在設備、剪輯、演算法。我們全包媒合、發布與數據追蹤，你只需專注做好料理，省下時間、成本與試錯風險。</div>
-        </div>
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">🎯</div>
-          <div class="benefit-title">客製影片訴求</div>
-          <div class="benefit-desc">無論新開幕衝曝光、深耕 IG Reels，或高級餐廳強調故事感，我們都能客製：15–60 秒短影音、1–3 分鐘探店長片，從氛圍療癒到開箱體驗，全風格皆可。</div>
-        </div>
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">📊</div>
-          <div class="benefit-title">低風險透明追蹤</div>
-          <div class="benefit-desc">建議從 5 萬方案小試水溫，看到成效再加碼，無綁約壓力。發布後 30 天內提供完整數據報表，每一分預算都花在最有效的曝光上。</div>
+          <div class="benefit-desc">我們全包媒合、發布與數據，你只需專注料理，省下大量試錯風險。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="cta">
     <h2 class="cta-title">準備讓你的<span style="color:var(--gold)">餐廳</span>被看見了嗎？</h2>
     <p class="cta-desc">立即聯絡我們，免費評估你的餐廳，找到最適合的曝光策略。</p>
-   <div class="contact-cards">
-
-  <div class="contact-card">
-    <div class="contact-label">合作窗口</div>
-    <div class="contact-main">Fiona</div>
-    <div class="contact-sub">洛浯國際有限公司</div>
-  </div>
-
-  <a href="mailto:luowu1688@2acouple.com" class="contact-card contact-link">
-    <div class="contact-label">EMAIL</div>
-    <div class="contact-main">luowu1688@2acouple.com</div>
-    <div class="contact-tip">點擊寄送 Email</div>
-  </a>
-
-  <a href="https://line.me/ti/p/0916616127" target="_blank" class="contact-card contact-link">
-    <div class="contact-label">LINE</div>
-    <div class="contact-main">點我直接加 Line</div>
-    <div class="contact-tip">點擊加入好友</div>
-  </a>
-
-</div>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-label">合作窗口</div>
+        <div class="contact-main">Fiona</div>
+        <div class="contact-sub">洛浯國際有限公司</div>
+      </div>
+      <a href="mailto:luowu1688@2acouple.com" class="contact-card contact-link">
+        <div class="contact-label">EMAIL</div>
+        <div class="contact-main">luowu1688@2acouple.com</div>
+        <div class="contact-tip">點擊寄送 Email</div>
+      </a>
+      <a href="https://line.me/ti/p/0916616127" target="_blank" class="contact-card contact-link">
+        <div class="contact-label">LINE</div>
+        <div class="contact-main">點我直接加 Line</div>
+        <div class="contact-tip">點擊加入好友</div>
+      </a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-left">© 2025 洛浯國際有限公司 · LuoWu International Co., Ltd.</div>
     <div class="footer-right">餐廳網紅行銷專家</div>
   </footer>
 
   <script>
-
-
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -826,16 +647,15 @@ a, button {
     reveals.forEach(el => observer.observe(el));
 	
 	// Navbar scroll effect
-const nav = document.querySelector("nav");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    nav.style.background = "rgba(10,10,10,0.95)";
-    nav.style.backdropFilter = "blur(8px)";
-  } else {
-    nav.style.background = "linear-gradient(to bottom, rgba(10,10,10,0.95), transparent)";
-  }
-});
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        nav.style.background = "rgba(10,10,10,0.95)";
+        nav.style.backdropFilter = "blur(8px)";
+      } else {
+        nav.style.background = "linear-gradient(to bottom, rgba(10,10,10,0.95), transparent)";
+      }
+    });
   </script>
 </body>
 </html>

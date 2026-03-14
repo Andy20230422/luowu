@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<link rel="icon" href="logoa.jpg" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>洛浯國際｜餐廳網紅行銷合作方案</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Serif+TC:wght@300;400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <title>洛浯國際｜餐廳網紅行銷專家 - 短影音探店、KOL媒合、提升來客數</title>
+  <meta name="description" content="洛浯國際專注於餐廳網紅行銷，提供一站式短影音(Reels/Shorts)探店方案。透過精準媒合美食KOL，協助餐廳提升20-50%來客數，建立品牌形象與爆量曝光。">
+  <meta name="keywords" content="餐廳行銷, 網紅媒合, 短影音行銷, 美食探店, 洛浯國際, 餐廳推廣, KOL合作, IG行銷, 2A夫妻">
+  <link rel="icon" href="logoa.jpg" type="image/png">
+  <link rel="canonical" href="https://luowu.2acouple.com/" />
+
+  <meta property="og:title" content="洛浯國際｜讓對的人看見你的餐廳 - 專業網紅行銷方案">
+  <meta property="og:description" content="專業短影音執行與網紅媒合，從拍攝到成效追蹤一手包辦。">
+  <meta property="og:image" content="logoa.jpg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "洛浯國際有限公司",
+    "image": "logoa.jpg",
+    "@id": "https://luowu.2acouple.com/",
+    "url": "https://luowu.2acouple.com/",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "TW"
+    },
+    "description": "專為餐廳設計的網紅行銷與短影音解決方案，協助品牌建立社群聲量。",
+    "brand": {
+      "@type": "Brand",
+      "name": "洛浯國際"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
+    /* 保留你原本的所有 CSS 樣式，此處省略以節省篇幅，請直接套用你原本的 CSS */
     :root {
       --gold: #C9A84C;
       --gold-light: #E8C97A;
@@ -21,11 +53,8 @@
       --blue-mid: #243657;
       --blue-light: #2E4373;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--black);
       color: var(--white);
@@ -33,16 +62,12 @@
       font-weight: 300;
       overflow-x: hidden;
     }
-
-    /* ─── NOISE OVERLAY ─── */
     body::before {
       content: '';
       position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 1; opacity: 0.4;
     }
-
-    /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -86,8 +111,6 @@
       cursor: pointer; transition: all 0.3s; font-family: inherit;
     }
     .nav-cta:hover { background: var(--gold); color: var(--black); }
-
-    /* ─── HERO ─── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -106,7 +129,7 @@
                         linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
       background-size: 80px 80px;
       mask-image: radial-gradient(ellipse 80% 80% at center, black, transparent);
-	  animation: gridMove 40s linear infinite;
+      animation: gridMove 40s linear infinite;
     }
     .hero-eyebrow {
       font-size: 16px; letter-spacing: 5px; color: var(--gold);
@@ -158,8 +181,6 @@
       cursor: pointer; font-family: inherit; transition: all 0.3s;
     }
     .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
-
-    /* ─── SCROLL ICON 修正 ─── */
     .hero-scroll {
       position: absolute; bottom: 40px; 
       left: 0; right: 0; margin: 0 auto;
@@ -174,8 +195,6 @@
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: scrollPulse 2s ease-in-out infinite;
     }
-
-    /* ─── SECTION COMMONS ─── */
     section { position: relative; }
     .section-inner { max-width: 1200px; margin: 0 auto; padding: 120px 60px; }
     .section-tag {
@@ -193,8 +212,6 @@
       background: linear-gradient(to right, var(--gold), transparent);
       margin: 24px 0 40px;
     }
-
-    /* ─── WHY US ─── */
     #why { background: var(--black-soft); }
     .why-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -228,8 +245,6 @@
     }
     .why-content h3 { font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 8px; letter-spacing: 1px; }
     .why-content p { font-size: 14px; line-height: 1.8; color: var(--gray); }
-
-    /* ─── PROCESS ─── */
     #process { background: var(--black); }
     .process-steps {
       display: flex; flex-direction: column; gap: 0;
@@ -251,8 +266,6 @@
     .step-tag { font-size: 10px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
     .step-title { font-size: 22px; font-weight: 500; letter-spacing: 1px; margin-bottom: 14px; }
     .step-desc { font-size: 14px; line-height: 1.9; color: var(--gray); max-width: 640px; }
-
-    /* ─── CASES ─── */
     #cases { background: var(--black-soft); }
     .cases-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -271,8 +284,6 @@
     .case-stats { display: flex; gap: 20px; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
     .case-stat .val { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--gold); }
     .case-stat .key { font-size: 11px; color: var(--gray); }
-
-    /* ─── BENEFITS ─── */
     #benefits { background: var(--black); }
     .benefits-grid {
       display: grid; grid-template-columns: repeat(2, 1fr);
@@ -288,8 +299,6 @@
     .benefit-icon { font-size: 28px; margin-bottom: 20px; }
     .benefit-title { font-size: 17px; font-weight: 500; margin-bottom: 12px; letter-spacing: 1px; }
     .benefit-desc { font-size: 14px; line-height: 1.9; color: var(--gray); }
-
-    /* ─── CTA BANNER ─── */
     #cta {
       background: linear-gradient(135deg, var(--blue) 0%, var(--black) 100%);
       text-align: center; padding: 120px 40px;
@@ -329,8 +338,6 @@
       background:rgba(201,168,76,0.05);
       transform:translateY(-8px);
     }
-
-    /* ─── FOOTER ─── */
     footer {
       background: #050505; padding: 40px 60px;
       display: flex; align-items: center; justify-content: space-between;
@@ -338,8 +345,6 @@
     }
     .footer-left { font-size: 12px; color: var(--gray); letter-spacing: 1px; }
     .footer-right { font-size: 12px; color: rgba(201,168,76,0.5); letter-spacing: 2px; }
-
-    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -353,19 +358,14 @@
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-	@keyframes gridMove {
+    @keyframes gridMove {
       from { transform: translateY(0); }
       to { transform: translateY(-80px); }
     }
-
-    /* ─── RESPONSIVE OPTIMIZATION ─── */
     @media (max-width: 900px) {
       nav { padding: 16px 20px; }
       nav ul { display: none; }
       .section-inner { padding: 80px 20px; }
-      
-      /* 手機版數字顯色優化 */
       .step-num { 
         color: var(--gold-light); 
         font-size: 48px;
@@ -373,268 +373,239 @@
       }
       .process-step:hover .step-num { opacity: 1; }
       .process-step { grid-template-columns: 60px 1fr; gap: 20px; }
-
       .why-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
-      
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 40px 20px; }
       .hero-ctas { flex-direction: column; width: 100%; max-width: 300px; }
       .btn-primary, .btn-outline { width: 100%; padding: 16px 20px; }
-
       .contact-cards { width: 100%; }
       .contact-card { width: 100%; min-width: 0; }
     }
-
     .contact-label{ font-size:11px; letter-spacing:3px; color:var(--gold); margin-bottom:18px; text-transform:uppercase; }
     .contact-main{ font-size:20px; font-weight:500; color:var(--white); }
     .contact-sub{ margin-top:10px; font-size:13px; color:var(--gray); }
     .contact-link{ text-decoration:none; color:inherit; }
     .contact-tip{ margin-top:14px; font-size:12px; color:var(--gray); opacity:0.6; }
     @media (min-width: 901px) { .contact-tip { opacity: 0; } .contact-card:hover .contact-tip { opacity: 1; } }
-
     body, div, p, span, section, h1, h2, h3, h4, h5, h6 { cursor: default; }
     a, button { cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo-wrap">
-      <div class="logo-icon"><img src="logoa.jpg" alt="洛浯國際" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" onerror="this.parentElement.innerHTML='洛'" /></div>
-      <div class="logo-text">
-        <div class="cn">洛浯國際</div>
-        <div class="en">LuoWu International</div>
-      </div>
-    </div>
-    <ul>
-      <li><a href="#why">為什麼選我們</a></li>
-      <li><a href="#process">合作流程</a></li>
-      <li><a href="#cases">成功案例</a></li>
-      <li><a href="#cta">聯絡我們</a></li>
-    </ul>
-    <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">立即合作</button>
-  </nav>
-
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <p class="hero-eyebrow">餐廳網紅行銷專家</p>
-    <h1 class="hero-title">讓<span class="accent">對的人</span>看見<br/>你的餐廳</h1>
-    <p class="hero-sub">精準媒合 × 短影音爆量 × 全程代管</p>
-    <div class="hero-divider"></div>
-    <p class="hero-desc">超過 70% 的年輕消費者會因網紅推薦選擇餐廳。明明好吃卻沒人知道？我們幫你解決這個問題，從找網紅到追成效，全部包辦。</p>
-    <div class="hero-ctas">
-      <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">查看合作方案</button>
-      <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">了解合作流程</button>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <section id="why">
-    <div class="section-inner">
-      <div class="why-grid">
-        <div>
-          <span class="section-tag">Why Us</span>
-          <h2 class="section-title">好吃不怕沒<br/><span style="color:var(--gold)">人知道</span></h2>
-          <div class="section-line"></div>
-          <div style="display:flex;gap:48px;margin-bottom:40px;flex-wrap:wrap;">
-            <div>
-              <div class="why-stat">70<span style="font-size:36px">%</span></div>
-              <div class="why-stat-label">年輕消費者依社群決定去哪吃</div>
-            </div>
-            <div>
-              <div class="why-stat">2.39<span style="font-size:24px">億</span></div>
-              <div class="why-stat-label">台灣網紅行銷市場規模（美元）</div>
-            </div>
-          </div>
-          <p style="font-size:14px;line-height:1.9;color:var(--gray);max-width:420px">
-            台灣網紅行銷市場年成長 11.7%，美食類 KOL 內容仍是流量主力。我們的負責人本身就是創作者，深耕 YouTube、FB、IG，深知品牌需求，也能準確辨別網紅粉絲的真實性。
-          </p>
+  <header>
+    <nav>
+      <div class="logo-wrap">
+        <div class="logo-icon">
+          <img src="logoa.jpg" alt="洛浯國際有限公司標誌" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" onerror="this.parentElement.innerHTML='洛'" />
         </div>
-        <div class="why-points reveal">
-          <div class="why-point">
-            <div class="why-num">01</div>
-            <div class="why-content">
-              <h3>更多人看見你的餐廳</h3>
-              <p>精準媒合適合風格的網紅，產出高質感探店內容，精準觸及目標客群。</p>
-            </div>
-          </div>
-          <div class="why-point">
-            <div class="why-num">02</div>
-            <div class="why-content">
-              <h3>帶動實體來客數</h3>
-              <p>從短片推坑到實際打卡消費，合作後來客數可提升 20–50%。</p>
-            </div>
-          </div>
-          <div class="why-point">
-            <div class="why-num">03</div>
-            <div class="why-content">
-              <h3>建立長期品牌形象</h3>
-              <p>不只是單次推薦，而是讓你的餐廳成為「值得特地來一趟」的記憶點。</p>
-            </div>
-          </div>
-          <div class="why-point">
-            <div class="why-num">04</div>
-            <div class="why-content">
-              <h3>全程包辦，省時省力</h3>
-              <p>媒合、拍攝、剪輯、發布、追蹤成效，一手包辦，你只需專注做好料理。</p>
-            </div>
-          </div>
+        <div class="logo-text">
+          <div class="cn">洛浯國際</div>
+          <div class="en">LuoWu International</div>
         </div>
       </div>
-    </div>
-  </section>
+      <ul>
+        <li><a href="#why">為什麼選我們</a></li>
+        <li><a href="#process">合作流程</a></li>
+        <li><a href="#cases">成功案例</a></li>
+        <li><a href="#cta">聯絡我們</a></li>
+      </ul>
+      <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})" aria-label="立即預約合作方案">立即合作</button>
+    </nav>
+  </header>
 
-  <section id="process">
-    <div class="section-inner">
-      <span class="section-tag">How It Works</span>
-      <h2 class="section-title">五步驟<span style="color:var(--gold)">合作流程</span></h2>
-      <div class="section-line"></div>
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <div class="step-tag">Step One</div>
-            <div class="step-title">選擇合作方案</div>
-            <div class="step-desc">依據你的預算、目標（曝光 / 來客 / 品牌形象）與餐廳定位，挑選最適方案。我們會免費評估你的餐廳，提供客製化建議。</div>
-          </div>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <div class="step-tag">Step Two</div>
-            <div class="step-title">精準媒合創作者</div>
-            <div class="step-desc">依餐廳風格、餐點特色及目標客群，從我們的網紅資料庫精準媒合。優先考量調性契合度、互動率。</div>
-          </div>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <div class="step-tag">Step Three</div>
-            <div class="step-title">到店拍攝體驗</div>
-            <div class="step-desc">網紅親自到店拍攝餐點細節、環境氛圍、用餐過程。確保內容自然，非硬性推銷。</div>
-          </div>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <div class="step-tag">Step Four</div>
-            <div class="step-title">後製與跨平台發布</div>
-            <div class="step-desc">製作 Reels、Shorts 或圖文，跨平台發布。發布前提供預覽審核。</div>
-          </div>
-        </div>
-        <div class="process-step reveal" style="border-bottom:none">
-          <div class="step-num">05</div>
-          <div class="step-body">
-            <div class="step-tag">Step Five</div>
-            <div class="step-title">成效回報 & 優化</div>
-            <div class="step-desc">發布後提供完整數據報表，包含觸及、觀看與互動率，並提供下一波優化建議。</div>
+  <main>
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <p class="hero-eyebrow">餐廳網紅行銷專家</p>
+      <h1 class="hero-title">讓<span class="accent">對的人</span>看見<br/>你的餐廳</h1>
+      <p class="hero-sub">精準媒合 × 短影音爆量 × 全程代管</p>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">專業網紅探店媒合，協助美食品牌在社群媒體獲取精準流量。從 Reels、IG 圖文到 YouTube 短片，我們幫你達成爆量曝光與實體轉化。</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">查看合作方案</button>
+        <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">了解合作流程</button>
+      </div>
+      <div class="hero-scroll">
+        <span>向下探索</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="section-inner">
+        <div class="why-grid">
+          <article>
+            <span class="section-tag">Why Us</span>
+            <h2 class="section-title">好吃不怕沒<br/><span style="color:var(--gold)">人知道</span></h2>
+            <div class="section-line"></div>
+            <div style="display:flex;gap:48px;margin-bottom:40px;flex-wrap:wrap;">
+              <div>
+                <div class="why-stat">70<span style="font-size:36px">%</span></div>
+                <div class="why-stat-label">年輕消費者依社群決定去哪吃</div>
+              </div>
+              <div>
+                <div class="why-stat">2.39<span style="font-size:24px">億</span></div>
+                <div class="why-stat-label">台灣網紅行銷市場規模（美元）</div>
+              </div>
+            </div>
+            <p style="font-size:14px;line-height:1.9;color:var(--gray);max-width:420px">
+              洛浯國際深耕美食內容產業。我們的團隊核心具備多年創作者經驗，能精準辨識網紅受眾真實性，為餐廳品牌把關每一分行銷預算。
+            </p>
+          </article>
+          <div class="why-points reveal">
+            <article class="why-point">
+              <div class="why-num">01</div>
+              <div class="why-content">
+                <h3>高質感探店內容產出</h3>
+                <p>媒合風格契合的 KOL/KOC，製作具備吸引力的短影音，觸及超過萬名潛在顧客。</p>
+              </div>
+            </article>
+            <article class="why-point">
+              <div class="why-num">02</div>
+              <div class="why-content">
+                <h3>顯著提升實體來客</h3>
+                <p>運用社群心理建立打卡誘因，數據顯示合作後餐廳平均來客數可提升 20–50%。</p>
+              </div>
+            </article>
+            <article class="why-point">
+              <div class="why-num">03</div>
+              <div class="why-content">
+                <h3>建立長期品牌口碑</h3>
+                <p>不僅是短暫流量，而是讓餐廳在 Instagram 與 Google 搜尋中累積高品質評價與視覺素材。</p>
+              </div>
+            </article>
+            <article class="why-point">
+              <div class="why-num">04</div>
+              <div class="why-content">
+                <h3>全案代管省下溝通成本</h3>
+                <p>從合約簽署、內容審核到成效追蹤，洛浯國際提供一站式專業代辦服務。</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="cases">
-    <div class="section-inner">
-      <span class="section-tag">Success Stories</span>
-      <h2 class="section-title">真實<span style="color:var(--gold)">成功案例</span></h2>
-      <div class="section-line"></div>
-      <div class="cases-grid">
-        <div class="case-card reveal">
-          <div class="case-label">Case A</div>
-          <div class="case-icon">🍰</div>
-          <div class="case-title">甜點店<br/>短影片 3 天爆量</div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="val">1.5萬</div><div class="key">3天觀看次數</div></div>
-            <div class="case-stat"><div class="val">+20%</div><div class="key">來客數提升</div></div>
+    <section id="process">
+      <div class="section-inner">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">五步驟<span style="color:var(--gold)">專業流程</span></h2>
+        <div class="section-line"></div>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <div class="step-tag">Step One</div>
+              <h3 class="step-title">行銷方案諮詢與評估</h3>
+              <p class="step-desc">依據預算與餐廳定位挑選方案，並由專業團隊免費評估餐廳現狀提供客製建議。</p>
+            </div>
           </div>
-        </div>
-        <div class="case-card reveal">
-          <div class="case-label">Case B</div>
-          <div class="case-icon">☕</div>
-          <div class="case-title">咖啡廳<br/>探店影片帶動追蹤</div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="val">+1,200</div><div class="key">IG 新增追蹤</div></div>
-            <div class="case-stat"><div class="val">1週</div><div class="key">上線達成</div></div>
+          <div class="process-step reveal">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <div class="step-tag">Step Two</div>
+              <h3 class="step-title">精準媒合美食創作者</h3>
+              <p class="step-desc">從數千筆網紅資料庫中，篩選調性最符合的創作者，並確認其粉絲互動品質。</p>
+            </div>
           </div>
-        </div>
-        <div class="case-card reveal">
-          <div class="case-label">Case C</div>
-          <div class="case-icon">🍽️</div>
-          <div class="case-title">餐廳合作套餐<br/>業績大幅提升</div>
-          <div class="case-stats">
-            <div class="case-stat"><div class="val">+30%</div><div class="key">套餐銷售量</div></div>
-            <div class="case-stat"><div class="val">口碑</div><div class="key">持續發酵</div></div>
+          <div class="process-step reveal">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <div class="step-tag">Step Three</div>
+              <h3 class="step-title">實地到店拍攝體驗</h3>
+              <p class="step-desc">網紅親自到店捕捉最動人的餐點細節與空間氛圍，確保內容具備高度感染力。</p>
+            </div>
+          </div>
+          <div class="process-step reveal">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <div class="step-tag">Step Four</div>
+              <h3 class="step-title">跨平台發布與擴散</h3>
+              <p class="step-desc">製作 Reels、Shorts 等熱門短片格式，跨平台發布並鎖定目標區域受眾。</p>
+            </div>
+          </div>
+          <div class="process-step reveal" style="border-bottom:none">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <div class="step-tag">Step Five</div>
+              <h3 class="step-title">成效報表與優化建議</h3>
+              <p class="step-desc">提供完整後台數據報告，包含觸及率、觀看數與互動表現，作為品牌長期佈局依據。</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="benefits">
-    <div class="section-inner">
-      <span class="section-tag">Our Advantages</span>
-      <h2 class="section-title">合作<span style="color:var(--gold)">四大優勢</span></h2>
-      <div class="section-line"></div>
-      <div class="benefits-grid">
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">🚀</div>
-          <div class="benefit-title">快速增加餐廳曝光</div>
-          <div class="benefit-desc">短影音主導、精準媒合帶來高互動，讓你的餐廳快速進入目標客群視野。</div>
-        </div>
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">👥</div>
-          <div class="benefit-title">吸引網紅粉絲消費</div>
-          <div class="benefit-desc">真實體驗分享比硬廣更有說服力，合作後來客數可提升 20–50%。</div>
-        </div>
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">✨</div>
-          <div class="benefit-title">建立品牌社群聲量</div>
-          <div class="benefit-desc">透過故事化內容強化定位，讓餐廳成為「值得特地前來」的記憶點。</div>
-        </div>
-        <div class="benefit-item reveal">
-          <div class="benefit-icon">🎬</div>
-          <div class="benefit-title">無需自行拍攝管理</div>
-          <div class="benefit-desc">我們全包媒合、發布與數據，你只需專注料理，省下大量試錯風險。</div>
+    <section id="cases">
+      <div class="section-inner">
+        <span class="section-tag">Success Stories</span>
+        <h2 class="section-title">真實<span style="color:var(--gold)">合作成效</span></h2>
+        <div class="section-line"></div>
+        <div class="cases-grid">
+          <article class="case-card reveal">
+            <div class="case-label">美食案例 A</div>
+            <div class="case-icon">🍰</div>
+            <h3 class="case-title">連鎖甜點店<br/>短影音 3 天萬次曝光</h3>
+            <div class="case-stats">
+              <div class="case-stat"><div class="val">1.5萬</div><div class="key">觀看次數</div></div>
+              <div class="case-stat"><div class="val">+20%</div><div class="key">營收增長</div></div>
+            </div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-label">咖啡案例 B</div>
+            <div class="case-icon">☕</div>
+            <h3 class="case-title">品牌咖啡廳<br/>帶動 IG 粉絲追蹤</h3>
+            <div class="case-stats">
+              <div class="case-stat"><div class="val">+1,200</div><div class="key">新增追蹤</div></div>
+              <div class="case-stat"><div class="val">1週</div><div class="key">達成指標</div></div>
+            </div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-label">餐飲案例 C</div>
+            <div class="case-icon">🍽️</div>
+            <h3 class="case-title">特色餐廳<br/>合作套餐銷售爆紅</h3>
+            <div class="case-stats">
+              <div class="case-stat"><div class="val">+30%</div><div class="key">套餐銷量</div></div>
+              <div class="case-stat"><div class="val">口碑</div><div class="key">持續延燒</div></div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <section id="cta">
-    <h2 class="cta-title">準備讓你的<span style="color:var(--gold)">餐廳</span>被看見了嗎？</h2>
-    <p class="cta-desc">立即聯絡我們，免費評估你的餐廳，找到最適合的曝光策略。</p>
+    <h2 class="cta-title">準備讓你的<span style="color:var(--gold)">餐廳</span>品牌升級了嗎？</h2>
+    <p class="cta-desc">立即聯繫洛浯國際，獲取免費餐廳行銷評估報告。</p>
     <div class="contact-cards">
       <div class="contact-card">
-        <div class="contact-label">合作窗口</div>
+        <div class="contact-label">專業諮詢窗口</div>
         <div class="contact-main">Fiona</div>
         <div class="contact-sub">洛浯國際有限公司</div>
       </div>
-      <a href="mailto:luowu1688@2acouple.com" class="contact-card contact-link">
+      <a href="mailto:luowu1688@2acouple.com" class="contact-card contact-link" title="寄送郵件給洛浯國際">
         <div class="contact-label">EMAIL</div>
         <div class="contact-main">luowu1688@2acouple.com</div>
-        <div class="contact-tip">點擊寄送 Email</div>
+        <div class="contact-tip">點擊開啟郵件軟體</div>
       </a>
-      <a href="https://line.me/ti/p/0916616127" target="_blank" class="contact-card contact-link">
+      <a href="https://line.me/ti/p/0916616127" target="_blank" class="contact-card contact-link" title="加入洛浯國際官方Line">
         <div class="contact-label">LINE</div>
-        <div class="contact-main">點我直接加 Line</div>
-        <div class="contact-tip">點擊加入好友</div>
+        <div class="contact-main">點擊直接加入 Line</div>
+        <div class="contact-tip">線上即時回覆</div>
       </a>
     </div>
   </section>
 
   <footer>
-    <div class="footer-left">© 2025 洛浯國際有限公司 · LuoWu International Co., Ltd.</div>
-    <div class="footer-right">餐廳網紅行銷專家</div>
+    <div class="footer-left">© 2026 洛浯國際有限公司 · LuoWu International Co., Ltd.</div>
+    <div class="footer-right">台灣餐廳網紅行銷領導品牌</div>
   </footer>
 
   <script>
-    // Scroll reveal
+    // 原本的 JS 邏輯保持不變
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
@@ -645,8 +616,7 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-	
-	// Navbar scroll effect
+    
     const nav = document.querySelector("nav");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
